@@ -1,3 +1,5 @@
+const { map } = require('./ho');
+
 const monad = (init = []) => {
   let data = init;
 
@@ -5,10 +7,18 @@ const monad = (init = []) => {
     return data;
   };
 
-  Object.defineProperty(dispatcher, 'input', {
-    value: (arr) => {
-      data = arr;
-      return dispatcher;
+  Object.defineProperties(dispatcher, {
+    'input': {
+      value: (arr) => {
+        data = arr;
+        return dispatcher;
+      }
+    },
+    'map': {
+      value: (fn) => {
+        data = map(data, fn);
+        return dispatcher;
+      }
     }
   });
 

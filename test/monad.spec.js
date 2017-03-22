@@ -14,3 +14,12 @@ test('monad.input()', (assert) => {
     assert.deepEqual(monad().input([1, 2, 3])(), monad([1, 2, 3])(), 'init value has same effect as input()');
     assert.end();
 });
+
+test('monad.map()', (assert) => {
+  const orig = [1, 2, 3];
+
+  assert.deepEqual(monad(orig).map(e => e * 2)(), [2, 4, 6], 'output as expected');
+  assert.deepEqual(orig, [1, 2, 3], 'input data is not mutated');
+
+  assert.end();
+});
