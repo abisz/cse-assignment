@@ -1,7 +1,11 @@
 const test = require('tape');
 
-test('tests are working', (assert) => {
-  assert.plan(1);
+const monad = require('../src/monad');
 
-  assert.equal(true, true);
+test('monad', (assert) => {
+
+  assert.equal(typeof monad(), 'function', 'is a function');
+  assert.deepEqual(monad([1, 2, 3])(), [1, 2, 3], 'init value is passed');
+
+  assert.end();
 });
