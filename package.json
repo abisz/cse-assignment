@@ -4,5 +4,12 @@
   "description": "Client-Side Engineering Assignment",
   "main": "index.js",
   "author": "Simon Reinsperger <reinsperger.smn@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "tape ./test/**/*.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "^4.6.3"
+  }
 }
