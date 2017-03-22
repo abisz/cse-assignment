@@ -19,3 +19,12 @@ test('filter()', (assert) => {
 
   assert.end();
 });
+
+test('reduce()', (assert) => {
+  const orig = [1, 2, 3];
+
+  assert.equal(reduce(orig, (cur, prev) => cur + prev, 0), 6, 'return value as expected');
+  assert.deepEqual(orig, [1, 2, 3], 'original value didn\' change');
+
+  assert.end();
+});

@@ -15,7 +15,11 @@ module.exports = {
     return result;
   },
 
-  reduce: (arr, fn) => {
-
+  reduce: (arr, fn, val) => {
+    let result = val;
+    for (let i = 0; i < arr.length; i++) {
+      result = fn(arr[i], result);
+    }
+    return result;
   }
 };
