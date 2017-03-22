@@ -1,4 +1,4 @@
-module.exports = {
+const ho = {
   map: (arr, fn) => {
     const result = [];
     for (let i = 0; i < arr.length; i++) {
@@ -27,5 +27,13 @@ module.exports = {
     for (let i = 0; i < arr.length; i++) {
       if (fn(arr[i])) return arr[i];
     }
+  },
+
+  curry: (fn, ...args) => {
+    return (arr) => {
+      return fn(arr, ...args);
+    }
   }
 };
+
+module.exports = ho;
