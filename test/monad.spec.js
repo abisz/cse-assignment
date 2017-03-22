@@ -23,3 +23,39 @@ test('monad.map()', (assert) => {
 
   assert.end();
 });
+
+test('monad.reduce()', (assert) => {
+  const orig = [1, 2, 3];
+
+  assert.deepEqual(monad(orig).reduce((cur, prev) => cur + prev, 0)(), 6, 'output as expected');
+  assert.deepEqual(orig, [1, 2, 3], 'input data is not mutated');
+
+  assert.end();
+});
+
+test('monad.odd()', (assert) => {
+  const orig = [1, 2, 3];
+
+  assert.deepEqual(monad(orig).odd()(), [1, 3], 'output as expected');
+  assert.deepEqual(orig, [1, 2, 3], 'input data is not mutated');
+
+  assert.end();
+});
+
+test('monad.sum()', (assert) => {
+  const orig = [1, 2, 3];
+
+  assert.deepEqual(monad(orig).sum()(), 6, 'output as expected');
+  assert.deepEqual(orig, [1, 2, 3], 'input data is not mutated');
+
+  assert.end();
+});
+
+test('monad.mul()', (assert) => {
+  const orig = [1, 2, 3];
+
+  assert.deepEqual(monad(orig).mul(2)(), [2, 4, 6], 'output as expected');
+  assert.deepEqual(orig, [1, 2, 3], 'input data is not mutated');
+
+  assert.end();
+});
