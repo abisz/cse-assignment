@@ -10,3 +10,12 @@ test('map()', (assert) => {
 
   assert.end();
 });
+
+test('filter()', (assert) => {
+  const orig = [1, 2, 3];
+
+  assert.deepEqual(filter(orig, e => e % 2), [1, 3], 'return value as expected');
+  assert.deepEqual(orig, [1, 2, 3], 'original value didn\'t change');
+
+  assert.end();
+});
