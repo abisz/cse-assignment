@@ -1,0 +1,8 @@
+{
+  "name": "cse-assignment",
+  "version": "1.0.0",
+  "description": "Client-Side Engineering Assignment",
+  "main": "index.js",
+  "author": "Simon Reinsperger <reinsperger.smn@gmail.com>",
+  "license": "MIT"
+}
