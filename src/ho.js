@@ -21,5 +21,11 @@ module.exports = {
       result = fn(arr[i], result);
     }
     return result;
+  },
+
+  find: (arr, fn) => {
+    for (let i = 0; i < arr.length; i++) {
+      if (fn(arr[i])) return arr[i];
+    }
   }
 };
