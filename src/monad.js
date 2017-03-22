@@ -5,6 +5,13 @@ const monad = (init = []) => {
     return data;
   };
 
+  Object.defineProperty(dispatcher, 'input', {
+    value: (arr) => {
+      data = arr;
+      return dispatcher;
+    }
+  });
+
   return dispatcher;
 };
 
