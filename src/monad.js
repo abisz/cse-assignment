@@ -34,7 +34,7 @@ const monad = (init = []) => {
     },
     'sum': {
       value: () => {
-        data = reduce(data, (cur, prev) => cur + prev, 0);
+        data = reduce(data, (prev, cur) => cur + prev, 0);
         return dispatcher;
       }
     },

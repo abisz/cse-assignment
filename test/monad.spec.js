@@ -27,7 +27,7 @@ test('monad.map()', (assert) => {
 test('monad.reduce()', (assert) => {
   const orig = [1, 2, 3];
 
-  assert.deepEqual(monad(orig).reduce((cur, prev) => cur + prev, 0)(), 6, 'output as expected');
+  assert.deepEqual(monad(orig).reduce((prev, cur) => cur + prev, 0)(), 6, 'output as expected');
   assert.deepEqual(orig, [1, 2, 3], 'input data was not mutated');
 
   assert.end();
